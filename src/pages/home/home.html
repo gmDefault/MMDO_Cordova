@@ -8,8 +8,11 @@
 
 <ion-content padding>
 <ion-list no-lines>
-  <button ion-item *ngFor="let item of result_table" (click)="itemSelected(item)">
-    {{ item.title }}
+  <button ion-item *ngFor="let item of result_table">
+    <p>Titre : {{ item.title }}
+    Auteur : {{ item.author }}
+    <img src = "item.image" >
+    </p>
   </button>
 </ion-list>
 </ion-content>
