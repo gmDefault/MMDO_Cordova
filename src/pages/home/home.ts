@@ -14,9 +14,12 @@ interface Search {
   templateUrl: 'home.html'
 })
 export class HomePage {
-  result_table: Search[] = [{ title: "FightClub", author: "Moi", date: "30-FEB-2020", image: "http://lorempixel.com/400/200" }];
+  result_table: Search[] = [{ title: "FightClub", author: "Moi", date: "30-FEB-2020", image: "https://placeimg.com/640/480/any" }];
   constructor(public navCtrl: NavController) {
-
   }
+query : string = "Rechercheaazaaaaaezazrazkazijarzijarzijarzij";
 
+ionInput():void{
+  console.log(this.query);
+}
 }

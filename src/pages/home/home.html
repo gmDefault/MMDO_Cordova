@@ -4,15 +4,19 @@
       Ionic Blank
     </ion-title>
   </ion-navbar>
+<ion-searchbar placeholder="Search" showCancelButton color="danger" [(ngModel)]="query" (ionInput)="ionInput($event)"></ion-searchbar>
 </ion-header>
 
 <ion-content padding>
-<ion-list no-lines>
-  <button ion-item *ngFor="let item of result_table">
-    <p>Titre : {{ item.title }}
-    Auteur : {{ item.author }}
-    <img src = "item.image" >
-    </p>
-  </button>
+
+<ion-list>
+  <ion-item *ngFor="let item of result_table">
+    <ion-thumbnail item-start>
+      <img src="item.list">
+    </ion-thumbnail>
+    <p> {{item.title}} </p>
+    <p>{{item.author}}</p>
+    <button ion-button clear item-end>View</button>
+  </ion-item>
 </ion-list>
 </ion-content>
