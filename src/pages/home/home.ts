@@ -14,27 +14,24 @@ export interface Search {
   overview : string;
 }
 
-const resultat_table : Array<Search> = [];
-
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  result_table: Search[] = [];
+  result_table: Observable<Search[]>;
 
   query: string = "";
-  params: HttpParams;
   link : string = 'https://api.themoviedb.org/3/search/movie';
 
   constructor(public navCtrl: NavController, public http : HttpClient) {
+    this.ionInput();
   }
 
 
-
 fetchResults() : Observable<Search[]>{
- return this.http.get<Search>(this.link,{
+ return this.http.get<Search[]>(this.link,{
   params : new HttpParams().set("api_key",api_key).set("query",this.query)}).pluck('results');
 }
 
@@ -45,7 +42,12 @@ push(item:Search):void{
 
 ionInput():void{
   console.log(this.query);
-
+  if(this.query){
+    this.result_table = this.fetchResults();
+  }
+  else{
+    this.result_table = Observable.of([]);
+  }
 }
 }
 

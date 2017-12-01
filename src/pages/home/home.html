@@ -19,12 +19,12 @@
   <!-- <div *ngIf="this.query;"> Aucun résultat </div> -->
   <ion-item *ngFor="let item of result_table | async">
     <ion-thumbnail item-start>
-      <img src="item.poster_path">
+      <img [src]="'https://image.tmdb.org/t/p/w92/' + item.poster_path">
     </ion-thumbnail>
     <p> {{item.title}} </p>
     <p>{{item.author}}</p>
     <!-- <button ion-button clear item-end>View</button> -->
-<button ion-button clear item-end (click)="push(item)">Plus d'information</button>
+<button ion-button clear item-end (click)="push(item)">More</button>
 
   </ion-item>
 </ion-list>

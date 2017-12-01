@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-<p> {{movie.author}}</p>
-<p> {{movie.release_date}}</p>
-<img src="item.poster_path">
+<p> Film sortie le : {{movie.release_date | date}}</p>
+<p> Résumé : {{movie.overview}}</p>
+<img [src]="'https://image.tmdb.org/t/p/w185/' + movie.poster_path">
 </ion-content>
