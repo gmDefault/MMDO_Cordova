@@ -21,6 +21,8 @@ export class HomePage {
   }
 query : string = "";
 
+
+
 ionInput():void{
   console.log(this.query);
 }
