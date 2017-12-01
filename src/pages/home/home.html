@@ -13,11 +13,11 @@
 <ion-content padding>
 
 <ion-list>
-  <ion-item *ngIf="!result_table.length">
+  <ion-item *ngIf="!(result_table | async)?.length">
     <p>Aucun résultat</p>
   </ion-item>
   <!-- <div *ngIf="this.query;"> Aucun résultat </div> -->
-  <ion-item *ngFor="let item of result_table">
+  <ion-item *ngFor="let item of result_table | async">
     <ion-thumbnail item-start>
       <img src="item.poster_path">
     </ion-thumbnail>
