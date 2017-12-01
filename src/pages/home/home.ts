@@ -8,6 +8,8 @@ interface Search {
   image : string;
 }
 
+const resultat_table : Array<Search> = [];
+
 
 @Component({
   selector: 'page-home',
@@ -17,7 +19,7 @@ export class HomePage {
   result_table: Search[] = [{ title: "FightClub", author: "Moi", date: "30-FEB-2020", image: "https://placeimg.com/640/480/any" }];
   constructor(public navCtrl: NavController) {
   }
-query : string = "Rechercheaazaaaaaezazrazkazijarzijarzijarzij";
+query : string = "";
 
 ionInput():void{
   console.log(this.query);

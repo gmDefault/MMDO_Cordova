@@ -4,12 +4,19 @@
       Ionic Blank
     </ion-title>
   </ion-navbar>
-<ion-searchbar placeholder="Search" showCancelButton color="danger" [(ngModel)]="query" (ionInput)="ionInput($event)"></ion-searchbar>
+<ion-searchbar placeholder="Search"  [(ngModel)]="query" (ionInput)="ionInput()"></ion-searchbar>
 </ion-header>
+
+<!-- showCancelButton color="danger" -->
+
 
 <ion-content padding>
 
 <ion-list>
+  <ion-item *ngIf="!result_table.length">
+    <p>Aucun résultat</p>
+  </ion-item>
+  <!-- <div *ngIf="this.query;"> Aucun résultat </div> -->
   <ion-item *ngFor="let item of result_table">
     <ion-thumbnail item-start>
       <img src="item.list">
