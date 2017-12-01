@@ -19,11 +19,13 @@
   <!-- <div *ngIf="this.query;"> Aucun résultat </div> -->
   <ion-item *ngFor="let item of result_table">
     <ion-thumbnail item-start>
-      <img src="item.list">
+      <img src="item.img">
     </ion-thumbnail>
     <p> {{item.title}} </p>
     <p>{{item.author}}</p>
-    <button ion-button clear item-end>View</button>
+    <!-- <button ion-button clear item-end>View</button> -->
+<button ion-button clear item-end (click)="push(item)">Plus d'information</button>
+
   </ion-item>
 </ion-list>
 </ion-content>
