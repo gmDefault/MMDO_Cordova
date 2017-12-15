@@ -14,7 +14,7 @@
 
 <ion-list>
   <ion-item *ngIf="!(result_table | async)?.length">
-    <p>Aucun résultat</p>
+    <p>No results</p>
   </ion-item>
   <!-- <div *ngIf="this.query;"> Aucun résultat </div> -->
   <ion-item *ngFor="let item of result_table | async">
